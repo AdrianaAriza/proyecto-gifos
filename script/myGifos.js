@@ -2,7 +2,7 @@
 
 let mygif = localStorage.getItem("vector_id");
 const path =
-    "http://api.giphy.com/v1/gifs?ids=" +
+    "https://api.giphy.com/v1/gifs?ids=" +
     mygif +
     "&api_key=89o92Eb4EKKYqo9z1wEcVQ8wsfb5gL1Z";
 
