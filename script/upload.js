@@ -91,6 +91,7 @@ document.getElementById("btn-stop-recording").onclick = async function () {
 };
 
 function uploadVideo() {
+    videoScreen.style.display = "none";
     let form = new FormData();
     form.append("file", blob, "myGifo.git");
     repeat.style.display = "none";
@@ -105,11 +106,13 @@ function uploadVideo() {
         },
         json: true,
     }
-    );
-    repeat.style.display = "block";
-    videoScreen.style.display = "none";
-    imgfinished.src = repeat.src;
-    mygifos.style.display = "block";
+    ).then(() => {
+
+        repeat.style.display = "block";
+        imgfinished.src = repeat.src;
+        mygifos.style.display = "block";
+    }
+    )
 }
 
 async function fetchURL(url, params) {
@@ -166,5 +169,5 @@ function whileChange() {
     setTimeout(function chageToEnd() {
         uVideo.style.display = "none";
         cGif.style.display = "block";
-    }, 3000);
+    }, 5000);
 }
